@@ -1,0 +1,17 @@
+station,scale,n_values,max_duration_months,intensity_min_SPI,severity_sum_negative_SPI,mean_SPI
+Agdez,SPI-3,382,7,-1.86,-140.22,0.03
+Agdez,SPI-6,379,9,-2.34,-153.41,0.0
+Agdez,SPI-9,376,20,-2.41,-151.92,0.0
+Agdez,SPI-12,373,18,-2.46,-152.11,0.0
+Zagora,SPI-3,382,5,-1.86,-139.7,0.03
+Zagora,SPI-6,379,6,-2.63,-151.48,-0.0
+Zagora,SPI-9,376,13,-2.96,-154.68,-0.0
+Zagora,SPI-12,373,17,-2.26,-154.89,-0.0
+Tagounite,SPI-3,382,2,-1.32,-93.35,0.14
+Tagounite,SPI-6,379,7,-2.37,-141.36,0.02
+Tagounite,SPI-9,376,14,-2.72,-148.16,-0.0
+Tagounite,SPI-12,373,11,-2.3,-148.97,-0.0
+Mhamid_El_Ghizlane,SPI-3,382,0,-0.78,-48.55,0.31
+Mhamid_El_Ghizlane,SPI-6,379,7,-1.85,-116.57,0.09
+Mhamid_El_Ghizlane,SPI-9,376,11,-2.13,-144.76,0.02
+Mhamid_El_Ghizlane,SPI-12,373,13,-2.62,-145.68,0.01

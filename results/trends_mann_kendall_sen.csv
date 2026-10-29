@@ -1,0 +1,9 @@
+station,series,n,S,Z,p_value,sen_slope_per_year
+Agdez,August SPI-12,31,-56,-0.94,0.35,-0.0115
+Agdez,Hydrological-year precipitation (mm),31,-56,-0.94,0.35,-0.4583
+Zagora,August SPI-12,31,-101,-1.7,0.089,-0.0263
+Zagora,Hydrological-year precipitation (mm),31,-101,-1.7,0.089,-0.7059
+Tagounite,August SPI-12,31,-114,-1.92,0.055,-0.0407
+Tagounite,Hydrological-year precipitation (mm),31,-114,-1.92,0.055,-1.25
+Mhamid_El_Ghizlane,August SPI-12,31,-59,-0.99,0.323,-0.0226
+Mhamid_El_Ghizlane,Hydrological-year precipitation (mm),31,-59,-0.99,0.323,-0.6667

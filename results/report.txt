@@ -1,0 +1,175 @@
+S3_spi_middle_draa.py version 1.1 | Python 3.10.2 | numpy 1.23.5 | pandas 1.4.1 | scipy 1.15.3
+Input: S1_Monthly_rainfall | calibration 1989-2020 | analysis period 1989-2020
+
+TABLE 1. Station statistics (calendar years)
+           station  months  missing_months  years  share_zero_months_%  MAP_mm  SD_mm
+             Agdez     384               0     32                 47.4   93.50  45.72
+            Zagora     384               0     32                 46.6   67.25  30.05
+         Tagounite     384               0     32                 60.2   52.03  32.32
+Mhamid_El_Ghizlane     384               0     32                 71.4   39.16  28.28
+
+TABLE 3 / INTENSITY / TABLE 5. Drought characteristics
+           station  scale  n_values  max_duration_months  intensity_min_SPI  severity_sum_negative_SPI  mean_SPI
+             Agdez  SPI-3       382                    7              -1.86                    -140.22      0.03
+             Agdez  SPI-6       379                    9              -2.34                    -153.41      0.00
+             Agdez  SPI-9       376                   20              -2.41                    -151.92      0.00
+             Agdez SPI-12       373                   18              -2.46                    -152.11      0.00
+            Zagora  SPI-3       382                    5              -1.86                    -139.70      0.03
+            Zagora  SPI-6       379                    6              -2.63                    -151.48     -0.00
+            Zagora  SPI-9       376                   13              -2.96                    -154.68     -0.00
+            Zagora SPI-12       373                   17              -2.26                    -154.89     -0.00
+         Tagounite  SPI-3       382                    2              -1.32                     -93.35      0.14
+         Tagounite  SPI-6       379                    7              -2.37                    -141.36      0.02
+         Tagounite  SPI-9       376                   14              -2.72                    -148.16     -0.00
+         Tagounite SPI-12       373                   11              -2.30                    -148.97     -0.00
+Mhamid_El_Ghizlane  SPI-3       382                    0              -0.78                     -48.55      0.31
+Mhamid_El_Ghizlane  SPI-6       379                    7              -1.85                    -116.57      0.09
+Mhamid_El_Ghizlane  SPI-9       376                   11              -2.13                    -144.76      0.02
+Mhamid_El_Ghizlane SPI-12       373                   13              -2.62                    -145.68      0.01
+
+TABLE 4. Classes of hydrological years (August SPI-12): counts and %
+                             count                                                                                                                 percent                                                                                                        
+class              Extreme wetness High wetness Near normal to moderately wet Near normal to moderately dry Severe drought Extreme drought Extreme wetness High wetness Near normal to moderately wet Near normal to moderately dry Severe drought Extreme drought
+Agdez                            1            3                             7                            18              1               1            3.23         9.68                         22.58                         58.06           3.23            3.23
+Zagora                           1            1                            11                            16              2               0            3.23         3.23                         35.48                         51.61           6.45            0.00
+Tagounite                        0            2                            13                            14              1               1            0.00         6.45                         41.94                         45.16           3.23            3.23
+Mhamid_El_Ghizlane               1            1                            15                            12              1               1            3.23         3.23                         48.39                         38.71           3.23            3.23
+
+Average over the stations (%):
+class
+Extreme wetness                   2.42
+High wetness                      5.65
+Near normal to moderately wet    37.10
+Near normal to moderately dry    48.39
+Severe drought                    4.03
+Extreme drought                   2.42
+
+Years per class:
+  Agdez
+    Extreme wetness: 1996
+    High wetness: 2009, 2010, 2015
+    Near normal to moderately wet: 1990, 1992, 1995, 2002, 2004, 2007, 2011
+    Near normal to moderately dry: 1991, 1993, 1994, 1997, 1998, 1999, 2000, 2003, 2005, 2006, 2008, 2012, 2013, 2016, 2017, 2018, 2019, 2020
+    Severe drought: 2014
+    Extreme drought: 2001
+  Zagora
+    Extreme wetness: 2009
+    High wetness: 1995
+    Near normal to moderately wet: 1990, 1991, 1992, 1996, 1998, 2004, 2006, 2010, 2015, 2018, 2019
+    Near normal to moderately dry: 1993, 1994, 1997, 1999, 2000, 2002, 2003, 2005, 2007, 2008, 2011, 2012, 2013, 2016, 2017, 2020
+    Severe drought: 2001, 2014
+    Extreme drought: -
+  Tagounite
+    Extreme wetness: -
+    High wetness: 1995, 2015
+    Near normal to moderately wet: 1990, 1991, 1994, 1996, 1997, 1998, 1999, 2000, 2004, 2007, 2009, 2010, 2019
+    Near normal to moderately dry: 1992, 1993, 2001, 2002, 2005, 2006, 2011, 2012, 2013, 2014, 2016, 2017, 2018, 2020
+    Severe drought: 2008
+    Extreme drought: 2003
+  Mhamid_El_Ghizlane
+    Extreme wetness: 1995
+    High wetness: 2015
+    Near normal to moderately wet: 1990, 1991, 1992, 1993, 1994, 1996, 1997, 1998, 2000, 2004, 2006, 2009, 2010, 2017, 2019
+    Near normal to moderately dry: 1999, 2002, 2003, 2005, 2007, 2011, 2012, 2013, 2014, 2016, 2018, 2020
+    Severe drought: 2008
+    Extreme drought: 2001
+
+TRENDS. Mann-Kendall test and Sen slope
+           station                               series  n    S     Z  p_value  sen_slope_per_year
+             Agdez                        August SPI-12 31  -56 -0.94    0.350             -0.0115
+             Agdez Hydrological-year precipitation (mm) 31  -56 -0.94    0.350             -0.4583
+            Zagora                        August SPI-12 31 -101 -1.70    0.089             -0.0263
+            Zagora Hydrological-year precipitation (mm) 31 -101 -1.70    0.089             -0.7059
+         Tagounite                        August SPI-12 31 -114 -1.92    0.055             -0.0407
+         Tagounite Hydrological-year precipitation (mm) 31 -114 -1.92    0.055             -1.2500
+Mhamid_El_Ghizlane                        August SPI-12 31  -59 -0.99    0.323             -0.0226
+Mhamid_El_Ghizlane Hydrological-year precipitation (mm) 31  -59 -0.99    0.323             -0.6667
+
+VERIFICATION AGAINST THE ARTICLE
+  [OK] t1 Agdez MAP_mm: script 93.5 | article 93.5
+  [OK] t1 Agdez SD_mm: script 45.72 | article 45.72
+  [OK] t1 Zagora MAP_mm: script 67.25 | article 67.25
+  [OK] t1 Zagora SD_mm: script 30.05 | article 30.05
+  [OK] t1 Tagounite MAP_mm: script 52.03 | article 52.03
+  [OK] t1 Tagounite SD_mm: script 32.32 | article 32.32
+  [OK] t1 Mhamid_El_Ghizlane MAP_mm: script 39.16 | article 39.16
+  [OK] t1 Mhamid_El_Ghizlane SD_mm: script 28.28 | article 28.28
+  [OK] ch ('Agdez', 3) intensity_min_SPI: script -1.86 | article -1.86
+  [OK] ch ('Agdez', 3) severity_sum_negative_SPI: script -140.22 | article -140.22
+  [OK] ch ('Agdez', 6) intensity_min_SPI: script -2.34 | article -2.34
+  [OK] ch ('Agdez', 6) severity_sum_negative_SPI: script -153.41 | article -153.41
+  [OK] ch ('Agdez', 9) intensity_min_SPI: script -2.41 | article -2.41
+  [OK] ch ('Agdez', 9) severity_sum_negative_SPI: script -151.92 | article -151.92
+  [OK] ch ('Agdez', 12) intensity_min_SPI: script -2.46 | article -2.46
+  [OK] ch ('Agdez', 12) severity_sum_negative_SPI: script -152.11 | article -152.11
+  [OK] ch ('Agdez', 12) max_duration_months: script 18.0 | article 18
+  [OK] ch ('Zagora', 3) intensity_min_SPI: script -1.86 | article -1.86
+  [OK] ch ('Zagora', 3) severity_sum_negative_SPI: script -139.7 | article -139.7
+  [OK] ch ('Zagora', 6) intensity_min_SPI: script -2.63 | article -2.63
+  [OK] ch ('Zagora', 6) severity_sum_negative_SPI: script -151.48 | article -151.48
+  [OK] ch ('Zagora', 9) intensity_min_SPI: script -2.96 | article -2.96
+  [OK] ch ('Zagora', 9) severity_sum_negative_SPI: script -154.68 | article -154.68
+  [OK] ch ('Zagora', 12) intensity_min_SPI: script -2.26 | article -2.26
+  [OK] ch ('Zagora', 12) severity_sum_negative_SPI: script -154.89 | article -154.89
+  [OK] ch ('Zagora', 12) max_duration_months: script 17.0 | article 17
+  [OK] ch ('Tagounite', 3) intensity_min_SPI: script -1.32 | article -1.32
+  [OK] ch ('Tagounite', 3) severity_sum_negative_SPI: script -93.35 | article -93.35
+  [OK] ch ('Tagounite', 6) intensity_min_SPI: script -2.37 | article -2.37
+  [OK] ch ('Tagounite', 6) severity_sum_negative_SPI: script -141.36 | article -141.36
+  [OK] ch ('Tagounite', 9) intensity_min_SPI: script -2.72 | article -2.72
+  [OK] ch ('Tagounite', 9) severity_sum_negative_SPI: script -148.16 | article -148.16
+  [OK] ch ('Tagounite', 12) intensity_min_SPI: script -2.3 | article -2.3
+  [OK] ch ('Tagounite', 12) severity_sum_negative_SPI: script -148.97 | article -148.97
+  [OK] ch ('Tagounite', 12) max_duration_months: script 11.0 | article 11
+  [OK] ch ('Mhamid_El_Ghizlane', 3) intensity_min_SPI: script -0.78 | article -0.78
+  [OK] ch ('Mhamid_El_Ghizlane', 3) severity_sum_negative_SPI: script -48.55 | article -48.55
+  [OK] ch ('Mhamid_El_Ghizlane', 6) intensity_min_SPI: script -1.85 | article -1.85
+  [OK] ch ('Mhamid_El_Ghizlane', 6) severity_sum_negative_SPI: script -116.57 | article -116.57
+  [OK] ch ('Mhamid_El_Ghizlane', 9) intensity_min_SPI: script -2.13 | article -2.13
+  [OK] ch ('Mhamid_El_Ghizlane', 9) severity_sum_negative_SPI: script -144.76 | article -144.76
+  [OK] ch ('Mhamid_El_Ghizlane', 12) intensity_min_SPI: script -2.62 | article -2.62
+  [OK] ch ('Mhamid_El_Ghizlane', 12) severity_sum_negative_SPI: script -145.68 | article -145.68
+  [OK] ch ('Mhamid_El_Ghizlane', 12) max_duration_months: script 13.0 | article 13
+  [OK] cnt Agdez Extreme wetness: script 1.0 | article 1
+  [OK] cnt Agdez High wetness: script 3.0 | article 3
+  [OK] cnt Agdez Near normal to moderately wet: script 7.0 | article 7
+  [OK] cnt Agdez Near normal to moderately dry: script 18.0 | article 18
+  [OK] cnt Agdez Severe drought: script 1.0 | article 1
+  [OK] cnt Agdez Extreme drought: script 1.0 | article 1
+  [OK] cnt Zagora Extreme wetness: script 1.0 | article 1
+  [OK] cnt Zagora High wetness: script 1.0 | article 1
+  [OK] cnt Zagora Near normal to moderately wet: script 11.0 | article 11
+  [OK] cnt Zagora Near normal to moderately dry: script 16.0 | article 16
+  [OK] cnt Zagora Severe drought: script 2.0 | article 2
+  [OK] cnt Zagora Extreme drought: script 0.0 | article 0
+  [OK] cnt Tagounite Extreme wetness: script 0.0 | article 0
+  [OK] cnt Tagounite High wetness: script 2.0 | article 2
+  [OK] cnt Tagounite Near normal to moderately wet: script 13.0 | article 13
+  [OK] cnt Tagounite Near normal to moderately dry: script 14.0 | article 14
+  [OK] cnt Tagounite Severe drought: script 1.0 | article 1
+  [OK] cnt Tagounite Extreme drought: script 1.0 | article 1
+  [OK] cnt Mhamid_El_Ghizlane Extreme wetness: script 1.0 | article 1
+  [OK] cnt Mhamid_El_Ghizlane High wetness: script 1.0 | article 1
+  [OK] cnt Mhamid_El_Ghizlane Near normal to moderately wet: script 15.0 | article 15
+  [OK] cnt Mhamid_El_Ghizlane Near normal to moderately dry: script 12.0 | article 12
+  [OK] cnt Mhamid_El_Ghizlane Severe drought: script 1.0 | article 1
+  [OK] cnt Mhamid_El_Ghizlane Extreme drought: script 1.0 | article 1
+  [OK] avg None Extreme wetness: script 2.42 | article 2.42
+  [OK] avg None High wetness: script 5.65 | article 5.65
+  [OK] avg None Near normal to moderately wet: script 37.1 | article 37.1
+  [OK] avg None Near normal to moderately dry: script 48.39 | article 48.39
+  [OK] avg None Severe drought: script 4.03 | article 4.03
+  [OK] avg None Extreme drought: script 2.42 | article 2.42
+  [OK] mk Agdez Z: script -0.94 | article -0.94
+  [OK] mk Agdez p_value: script 0.35 | article 0.35
+  [OK] mk Agdez sen_slope_per_year: script -0.0115 | article -0.0115
+  [OK] mk Zagora Z: script -1.7 | article -1.7
+  [OK] mk Zagora p_value: script 0.089 | article 0.089
+  [OK] mk Zagora sen_slope_per_year: script -0.0263 | article -0.0263
+  [OK] mk Tagounite Z: script -1.92 | article -1.92
+  [OK] mk Tagounite p_value: script 0.055 | article 0.055
+  [OK] mk Tagounite sen_slope_per_year: script -0.0407 | article -0.0407
+  [OK] mk Mhamid_El_Ghizlane Z: script -0.99 | article -0.99
+  [OK] mk Mhamid_El_Ghizlane p_value: script 0.323 | article 0.323
+  [OK] mk Mhamid_El_Ghizlane sen_slope_per_year: script -0.0226 | article -0.0226
+ALL VALUES MATCH THE ARTICLE
